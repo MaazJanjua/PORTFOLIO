@@ -1,0 +1,209 @@
+/* Add this to your existing CSS */
+.hidden {
+  display: none !important;
+}
+
+/* Rest of your existing CSS remains the same */
+/* Base Navbar Styles */
+ .navcontainer { 
+  width: 100%;
+
+  background: transparent;
+  color: white;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+
+} 
+
+
+
+
+
+
+
+/* Add background when scrolled (optional) */
+.navcontainer.scrolled {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.navbar {
+  width: 100%;
+  margin: 0 auto;
+      max-width: 2000px;
+  /* left: 50%; */
+  /* transform: translateX(-50%); */
+  margin: 0 auto;
+}
+
+.navrow {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Top bar holds logo and menu button */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+/* Logo */
+.logo {
+  height: 1.5rem;
+  width: auto;
+  padding-left: 1rem;
+  transition: all 0.3s ease;
+}
+
+/* Toggle menu button */
+.mobile-menu-button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  padding-right: 1rem;
+  z-index: 1001; 
+}
+
+/* Navigation menu (hidden by default on mobile) */
+.subnav {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.95);
+  width: 100%;
+}
+
+.subnav.active {
+  display: flex;
+}
+
+/* Menu links */
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: all 0.3s ease; 
+  padding: 0.5rem 1rem;
+}
+
+.nav-link:hover {
+  color: #ddd;
+  transform: translateY(-2px);
+}
+/* ========animation correct kkerna ha abhi */
+/* .nav-link:hover :not(li:hover){
+  opacity: .2;
+} */
+
+.contact-link {
+  background-color: white;
+  color: black !important;
+  padding: 0.5rem 1.5rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.contact-link:hover {
+  background-color: #ddd;
+  transform: translateY(-2px);
+}
+
+/* Mobile Devices (<= 480px) */
+@media (max-width: 480px) {
+  .navbar {
+    background-color: black;
+  }
+  
+  .logo {
+    height: 4.5rem;
+  }
+}
+
+/* Tablets (481px to 767px) */
+@media (min-width: 481px) and (max-width: 767px) {
+  .logo {
+    height: 6rem;
+  }
+  
+  .subnav {
+    padding: 2rem 1rem;
+  }
+  
+  .nav-link {
+    font-size: 1.2rem;
+  }
+} 
+
+/* Small Desktops (768px to 1023px) */
+@media (min-width: 768px) {
+  .navbar {
+    margin: 0 auto;
+  }
+  
+  .logo {
+    height: 8rem;
+  }
+  
+  .topbar {
+    padding: 1rem 2rem;
+  }
+  
+  .subnav {
+    display: flex !important;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding: 0 2rem;
+    background-color: transparent;
+  }
+  
+  .mobile-menu-button {
+    display: none;
+  }
+  
+  .navrow {
+    padding: 0.5rem 3rem;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .nav-link {
+    font-size: 1.2rem;
+  }
+}
+
+/* Large Desktops (>= 1024px) */
+@media (min-width: 1024px) {
+  .navrow {
+    padding: 0.5rem 7rem;
+  }
+  
+  .logo {
+    height: 5.5rem;
+  }
+  
+  .nav-link {
+    font-size: 1.4rem;
+    margin: 0 0.5rem;
+  }
+  
+  .contact-link {
+    padding: 0.7rem 2rem;
+  }
+}
+
+/* Extra Large Screens (>= 1440px) */
+@media (min-width: 1440px) {
+  .navrow {
+    padding: 0.5rem 10rem;
+  }
+}
